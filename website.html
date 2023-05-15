@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<title>Caringbah High School</title>
+		<style>
+h1 {
+color:#FFFFFF;
+font-size: 390%;
+border: 5px solid darkgreen;
+text-align: center;
+background-color: darkgreen;
+}
+
+p {
+color:#002e06;
+padding-left: 2px;
+}
+
+.sub {
+color:darkgrey;
+font-weight: lighter;
+}
+
+.main {
+font-size: large;
+}
+
+.line{
+border: 3px solid darkgreen;
+}
+
+li {
+list-style-type: upper-roman;
+text-decoration: none;
+}
+
+* {
+  font-family: Helvetica, sans-serif;
+}
+
+img {
+display: block;
+padding-bottom: 10px;
+margin-left: auto;
+margin-right: auto;
+}
+
+
+		</style>
+	</head>
+	<body>
+		<h1 id="name"> Caringbah High-School </h1>
+		<img src="https://caringbah-h.schools.nsw.gov.au/content/dam/doe/sws/schools/c/caringbah-h/images/chs_crest_green_1355267211561_m_transparent.png" alt="CHS logo">	
+		<p class="main">
+			A selective and coeducational high school, providing a quality, innovative and nurturing education. <br></p>
+
+		<p>Enter your name:</p>
+		<input id="inpt">
+		<input id="changeWord" type="button" value="Submit" onclick="wordReplace();"/>
+
+		<p id="ttext">  </p>
+
+			<p> Upcoming events: </p>
+
+		<ul>
+			<li><strong>9th May</strong>: P&C Meeting</li>
+			<li><strong>10th May</strong>: School Musical Matinee</li>
+			<li><strong>11th May</strong>: School Cross Country</li>
+			<li><strong>11th May</strong>: All Year 11 - U Turn the Wheel</li>
+		</ul>
+
+		<p class="line"><p>
+
+		<p><i> 📞 +02 9524 3859 <br><br>
+    		85 Willarong Road Caringbah NSW 2229 </i></p>
+
+		<p class="sub"><i> We would like to pay our respects and acknowledge the traditional custodians of the land and also pay respect to Elders both past and present. </i></p>
+
+		<script>
+			function wordReplace()
+				{
+					ttext.textContent = "Welcome, "
+					ttext.textContent += inpt.value;
+				}
+		</script>	
+
+
+	</body>
+</html>
