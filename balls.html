@@ -1,0 +1,56 @@
+<body>
+	<h1>Playing with balls </h1>
+	<p id="display"></p>
+	<canvas id="myCanvas" width="500" height="500" style="border:1px solid black">
+		
+	</canvas>
+
+	<script>
+		let bally = 50;
+		let ballx = 250;
+		let ballyspeed = 0;
+		let ballxspeed = 0;
+		let ballyaccel = 0.098;
+		let ballflip = 0;
+
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+
+
+
+		function movement(){
+			ballyspeed = ballyspeed + ballyaccel;
+			bally = bally + ballyspeed
+			//console.log(ballyspeed)
+			display.textContent = "Speed: "+Math.floor(ballyspeed)
+			if (ballyspeed > 0){
+				ballflip = 0
+			}
+		}
+
+		function drawball(){
+		ctx.clearRect(0,0,canvas.width,canvas.height);
+		ctx.beginPath();
+		ctx.fillStyle = "rgb(255,0,0)"
+		ctx.arc(ballx, bally, 50, 0, 2 * Math.PI);
+		ctx.fill();
+		ctx.stroke();
+		if (bally > 450 && ballflip == 0){
+			ballyaccel = ballyaccel;
+			ballyspeed = -ballyspeed/1.25;
+			ballflip = 1;
+		}	
+		if (bally >= 455 && ballflip==1){
+			bally = 455;
+			ballyspeed = 0;
+			ballyaccel = 0;
+			ballflip = 0;
+		}
+		}
+
+		setInterval(movement, 1);
+		setInterval(drawball, 1);
+
+
+	</script>
+</body>
